@@ -5,24 +5,20 @@
   "description": "",
   "main": "calculator.js",
   "scripts": {
-    "test": "jest --verbose",
-    "coverage": "jest --coverage && codecov"
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
+    "coverage": "npm test --coverage && codecov"
   },
   "jest": {
+    "transform":{},
+    "verbose": true,
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
-    "transform": {
-      ".(ts|tsx)": "ts-jest"
-    },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
     "moduleNameMapper": {
       "\\.(css|scss|less)$": "identity-obj-proxy"
     },
     "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "scss"
+      "js"
     ]
   },
   "repository": {
