@@ -1,6 +1,8 @@
 import reduceExpression from './reduceExpression'
+import determineOperator from './determineOperator'
 
 function reduceParentheses(str) {
+	
 	let lastOpenParentheses = str.lastIndexOf('(');
 	let nearestCloseParentheses = str.indexOf(')', lastOpenParentheses);
 	let expressionToEvaluate = str.substring(
@@ -8,7 +10,9 @@ function reduceParentheses(str) {
 	  nearestCloseParentheses
 	);
 	
-	let simplifiedExpression = reduceExpression(expressionToEvaluate);
+	let determinedOperator = determineOperator(expressionToEvaluate);
+		
+	let simplifiedExpression = reduceExpression(expressionToEvaluate, determinedOperator);
 
 	let start = `${str.substring(0, lastOpenParentheses)}`;
 	let middle = `${simplifiedExpression}`;
