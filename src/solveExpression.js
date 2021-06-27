@@ -5,7 +5,7 @@ const solveExpression = (str) => {
 		negativeModifier = -1
 	}
   
-	let operatorIndex = str.search(/[\+\-\^\*\/]/g)
+	let operatorIndex = str.search(/[+\-^*/]/g)
 	let leftSide = str.substring(0, operatorIndex)
 	let rightSide = str.substring(operatorIndex + 1, str.length)
 
