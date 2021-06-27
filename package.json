@@ -5,7 +5,7 @@
   "description": "",
   "main": "calculator.js",
   "scripts": {
-    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
+    "test": "jest",
     "coverage": "npm test --coverage && codecov"
   },
   "jest": {
@@ -34,6 +34,7 @@
   "homepage": "https://github.com/RaptorCentauri/calculator#readme",
   "devDependencies": {
     "codecov": "^3.8.2",
+    "eslint": "^7.29.0",
     "jest": "^27.0.5"
   },
   "dependencies": {}
