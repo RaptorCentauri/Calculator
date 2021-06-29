@@ -13,15 +13,13 @@ function calculator(str) {
 
 		if (hasParentheses) {
 			nextSolve = reduceParentheses(str)
-		}
-		else {
+		} else {
 			let determinedOperator = determineOperator(str)
 			nextSolve = reduceExpression(str, determinedOperator)
-		} 
-		
-		return calculator(nextSolve)		
+		}
+
+		return calculator(nextSolve)
 	}
-	
 }
 
 export default calculator
