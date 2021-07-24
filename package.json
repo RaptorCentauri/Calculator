@@ -5,8 +5,12 @@
   "description": "",
   "main": "calculator.js",
   "scripts": {
-    "test": "jest",
-    "coverage": "npm test --coverage && codecov"
+    "start": "parcel ./src/index.html",
+    "dev": "parcel ./src/index.html",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "coverage": "codecov",
+    "build": "parcel build ./src/index.html",
+    "deploy": "echo 'No deploy script has been specified'"
   },
   "jest": {
     "transform": {},
@@ -32,10 +36,15 @@
     "url": "https://github.com/RaptorCentauri/calculator/issues"
   },
   "homepage": "https://github.com/RaptorCentauri/calculator#readme",
-  "devDependencies": {
-    "codecov": "^3.8.2",
-    "eslint": "^7.29.0",
-    "jest": "^27.0.5"
+  "dependencies": {
+    "parcel": "^2.0.0-beta.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
-  "dependencies": {}
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "codecov": "^3.8.2",
+    "eslint": "^7.30.0",
+    "jest": "^27.0.6"
+  }
 }
