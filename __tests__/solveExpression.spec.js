@@ -1,4 +1,4 @@
-import solveExpression from '../src/solveExpression'
+import solveExpression from '../src/logic/solveExpression'
 
 describe('solveExpression', function () {
 	test('should add two positive integers', () => {

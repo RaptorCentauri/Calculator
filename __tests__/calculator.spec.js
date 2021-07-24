@@ -1,4 +1,4 @@
-import calculator from '../src/calculator'
+import calculator from '../src/logic/calculator'
 
 describe('calculator', function () {
 	test('should add two positive integers', () => {
