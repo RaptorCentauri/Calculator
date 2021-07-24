@@ -5,8 +5,8 @@
   "description": "",
   "main": "calculator.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/.bin/jest",
-    "coverage": "codecov"
+    "test": "jest",
+    "coverage": "npm test --coverage && codecov"
   },
   "jest": {
     "transform": {},

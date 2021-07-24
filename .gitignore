@@ -3,3 +3,5 @@ coverage/
 .nova/
 .DS_Store
 lib/
+.parcel-cache/
+dist/
