@@ -12,6 +12,8 @@ commands:
       - run: sudo rm -rf /var/lib/apt/lists/*
       - run: sudo apt-get update
       - run: sudo apt-get install python-dev
+      - run: curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+      - run: sudo python3 get-pip.py
       - run: pip install --upgrade pip
   get_aws_cli:
     description: "install awscli"
