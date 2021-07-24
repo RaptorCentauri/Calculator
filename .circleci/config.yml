@@ -1,9 +1,9 @@
 version: 2.1 # use CircleCI 2.1
 
 executors:
-  node-14-executor:
+  node-16-executor:
     docker:
-      - image: circleci/node:14.0
+      - image: cimg/node:16.5.0
 
 commands:
   get_pip:
@@ -11,7 +11,7 @@ commands:
     steps:
       - run: sudo rm -rf /var/lib/apt/lists/*
       - run: sudo apt-get update
-      - run: sudo apt-get install python3
+      - run: sudo apt-get install python-dev
       - run: curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
       - run: sudo python get-pip.py
       - run: pip install --upgrade pip
@@ -46,7 +46,7 @@ commands:
 
 jobs:
   build:
-    executor: node-14-executor
+    executor: node-16-executor
     steps:
       - checkout
       - get_pip
@@ -57,4 +57,5 @@ jobs:
       - test_coverage
       - build_project
       - deploy_project
+
       - test_coverage
