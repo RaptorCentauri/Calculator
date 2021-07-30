@@ -1,12 +1,51 @@
-.button-style{
+@import "styles/mediaQueries.scss";
+
+$button-color: #b7b7b7;
+*{
+  background: color(srgb 0.41 0.41 0.41);
+}
+
+.equation{
+  height: calc(100vh*0.20);
+  border-bottom: 5px solid $button-color;
+  background-color: white;
+  font-size: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  color: blue;
-  width: 4em;
-  height: 4em;
-  background-color: white;
-  border: 3px solid red;
-  border-radius: 50%;
 }
+
+
+
+.button-style{
+
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $button-color;
+  border: 3px solid $button-color;
+  font-size: 2rem;
+  border-radius: 50%;
+  margin: 10%;
+  
+  &:active{
+    background: red;
+  }
+}
+
+
+.button-layout{
+  // width: 90vw;
+  margin-top: 2.5%;
+  display: grid;
+  grid-template-columns: repeat(4, 25vw);
+  // grid-auto-columns: 25vw;
+  grid-auto-rows: 25vw;
+}
+
+
+
+
+
+
