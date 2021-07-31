@@ -6,49 +6,128 @@ import calculator from '../logic/calculator'
 {/* import NumberBtn from './components/NumberBtn' */}
 
 
-const buttonValues = {
+{/* const buttonValues = {
   numbers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0' ],
   operators: ['+', '-', '*', '/', '(', ')', '^', '.', '=', 'C']
-}
+} */}
+
+const buttons = [
+  {
+    display:'1',
+    value:'1'
+  },
+  {
+    display:'2',
+    value:'2'
+  },
+  {
+    display:'3',
+    value:'3'
+  },
+  {
+    display:'4',
+    value:'4'
+  },
+  {
+    display:'5',
+    value:'5'
+  },
+  {
+    display:'6',
+    value:'6'
+  },
+  {
+    display:'7',
+    value:'7'
+  },
+  {
+    display:'8',
+    value:'8'
+  },
+  {
+    display:'9',
+    value:'9'
+  },
+  {
+    display:'0',
+    value:'0'
+  },
+  {
+    display:'+',
+    value:'+'
+  },
+  {
+    display:'-',
+    value:'-'
+  },
+  {
+    display:'x',
+    value:'*'
+  },
+  {
+    display:'÷',
+    value:'/'
+  },
+  {
+    display:'(',
+    value:'('
+  },
+  {
+    display:')',
+    value:')'
+  },
+  {
+    display:'^',
+    value:'^'
+  },
+  {
+    display:'.',
+    value:'.'
+  },
+  {
+    display:'=',
+    value:'='
+  },
+  {
+    display:'C',
+    value:'C'
+  },
+]
  
 
 
-const App = () => {
-  const {numbers, operators} = buttonValues;
-  
+const App = () => {  
   const [equation, setEquation] = React.useState('');
+  const [displayEquation, setDisplayEquation] = React.useState('');
   const [solution, setSolution] = React.useState();
-
-  const handleClick = value => {
-    if(value === 'C'){
-      let clearEquation = '';
-      setEquation(clearEquation);
-    }
     
-    else if(value === '='){
-      let solved = calculator(equation);
-      {/* setSolution(solved); */}
-      setEquation(solved);
-    }
-
-    else{
-      setEquation(`${equation}${value}`)
-    }
+  const handleClick = ({value, display}) => {
+    switch (value) {
+      case 'C':
+        setEquation('');
+        setDisplayEquation('');
+        break;
+      case '=':
+        let solved = calculator(equation);
+        setDisplayEquation(solved); 
+        break;  
+      default:
+        setEquation(`${equation}${value}`)
+        setDisplayEquation(`${displayEquation}${display}`)
+        break;
+     } 
   }
-    
       
       
-  const Button = ({value}) => <p className='button-style' onClick={() => handleClick(value)}> {value}</p>
+  const Button = ({value, display}) => <p className='button-style' onClick={() => handleClick({value, display})}> {display}</p>
     
-  handleClear = () => setEquation('');
 
   
   return(
     <React.Fragment>
-      <h1 className='equation'>{equation}</h1>
+      <h1 className='equation'>{displayEquation}</h1>
       <div className='button-layout'>
-      {numbers.map((num) => <Button key={num} value={num}/> )}
-      {operators.map((op) => <Button key={op} value={op}/> )} 
+      {buttons.map((btn) => <Button key={btn.value} value={btn.value} display={btn.display}/> )}
       </div>
     </React.Fragment>
   )
