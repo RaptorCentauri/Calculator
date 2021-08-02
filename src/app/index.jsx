@@ -5,12 +5,6 @@ import './index.scss'
 import calculator from '../logic/calculator'
 {/* import NumberBtn from './components/NumberBtn' */}
 
-
-{/* const buttonValues = {
-  numbers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0' ],
-  operators: ['+', '-', '*', '/', '(', ')', '^', '.', '=', 'C']
-} */}
-
 const buttons = [
   {
     display:'1',
@@ -119,13 +113,15 @@ const App = () => {
   }
       
       
-  const Button = ({value, display}) => <p className='button-style' onClick={() => handleClick({value, display})}> {display}</p>
+  const Button = ({value, display}) => <h6 className='button-style' button-value={value} onClick={() => handleClick({value, display})}> {display}</h6>
     
 
   
   return(
     <React.Fragment>
-      <h1 className='equation'>{displayEquation}</h1>
+      <div className='equation-box'>
+        <h1 className='equation-content'>{displayEquation}</h1>
+      </div>
       <div className='button-layout'>
       {buttons.map((btn) => <Button key={btn.value} value={btn.value} display={btn.display}/> )}
       </div>
