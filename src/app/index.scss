@@ -1,37 +1,124 @@
 @import "styles/mediaQueries.scss";
 
-$button-color: #b7b7b7;
+$button-color: #757575;
 *{
-  background: color(srgb 0.41 0.41 0.41);
+  background-color: black;
 }
 
-.equation{
+.equation-box{
   height: calc(100vh*0.20);
+  width: 100vw;
   border-bottom: 5px solid $button-color;
-  background-color: white;
-  font-size: 6rem;
+  box-sizing: border-box;
+  // background-color: white;
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 2.5%  
+  }
+  
+  .equation-content{
+    color: white;
+    width: inherit;
+    font-size: 6rem;
+    background: none;
+    text-align: right;
+    word-wrap: break-word;
+    }
+
+
 
 
 
 .button-style{
-
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: $button-color;
-  border: 3px solid $button-color;
-  font-size: 2rem;
+  color: white;
+  background-color: $button-color;
+  border: 3px solid white;
+  font-size: 3rem;
   border-radius: 50%;
   margin: 10%;
   
-  &:active{
-    background: red;
+  &[button-value~="("]{
+    // color: green;
+    grid-row: 1
   }
+  &[button-value~=")"]{
+    // color: green;
+    grid-row: 1
+  }
+  &[button-value~="^"]{
+    // color: green;
+    grid-row: 1
+  }
+  &[button-value~="C"]{
+    // color: green;
+    grid-row: 1
+  }
+  
+  
+  
+  &[button-value~="1"]{
+    // color: green;
+    grid-row: 2
+  }
+  &[button-value~="2"]{
+    // color: green;
+    grid-row: 2
+  }
+  &[button-value~="3"]{
+    // color: green;
+    grid-row: 2
+  }
+  &[button-value~="4"]{
+    // color: green;
+    grid-row: 3
+  }
+  &[button-value~="5"]{
+    // color: green;
+    grid-row: 3
+  }
+  &[button-value~="6"]{
+    // color: green;
+    grid-row: 3
+  }
+  &[button-value~="7"]{
+    // color: green;
+    grid-row: 4
+  }
+  &[button-value~="8"]{
+    // color: green;
+    grid-row: 4
+  }
+  &[button-value~="9"]{
+    // color: green;
+    grid-row: 4
+  }
+  &[button-value~="0"]{
+    // color: green;
+    grid-row: 5
+  }
+  &[button-value~="."]{
+    // color: green;
+    grid-row: 5
+  }
+  &[button-value~="="]{
+    // color: green;
+    grid-row: 5
+  }
+
+  
+  
+  
+  
+  &:active{
+    background-color: darken($button-color, 15%);
+  }
+  
+  
 }
 
 
