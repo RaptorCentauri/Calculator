@@ -112,20 +112,20 @@ const App = () => {
      } 
   }
       
-      
+     
   const Button = ({value, display}) => <h6 className='button-style' button-value={value} onClick={() => handleClick({value, display})}> {display}</h6>
     
 
   
   return(
-    <React.Fragment>
+    <div className='calculator-body'>
       <div className='equation-box'>
         <h1 className='equation-content'>{displayEquation}</h1>
       </div>
       <div className='button-layout'>
       {buttons.map((btn) => <Button key={btn.value} value={btn.value} display={btn.display}/> )}
       </div>
-    </React.Fragment>
+    </div>
   )
 }
 
