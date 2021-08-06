@@ -25,4 +25,11 @@ describe('calculator', function () {
 		let solution = calculator('3+5')
 		expect(isNaN(solution)).toBeFalsy()
 	})
+	
+	test('should work with negative numbers 5', () => {
+		let solution = calculator('8*(12/-2)')
+		expect(solution).toBe(-48)
+	})
 })
+
+
