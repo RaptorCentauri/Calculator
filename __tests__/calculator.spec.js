@@ -30,6 +30,12 @@ describe('calculator', function () {
 		let solution = calculator('8*(12/-2)')
 		expect(solution).toBe(-48)
 	})
+	
+	test('should treat a number followed by () as multiplication', () => {
+		let solution = calculator('5(6+2)')
+		expect(solution).toBe(40)
+	})
+	
 })
 
 
