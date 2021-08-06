@@ -12,21 +12,15 @@ function reduceExpression(str, regex) {
 		let outOfBoundsRight = ''
 
 		let indexOfOperator = str.search(regex)
-
+		
+		let hasRightSideNegative = str[indexOfOperator +1] === '-'
+		
 		if (str.search(allOperatorsRegex) < indexOfOperator) {
 			leftBoundIndex = str.search(allOperatorsRegex) + 1
 		}
-
-		if (
-			str.substring(indexOfOperator + 1, str.length).search(allOperatorsRegex) >
-			-1
-		) {
-			righBoundIndex =
-				str
-					.substring(indexOfOperator + 1, str.length)
-					.search(allOperatorsRegex) +
-				indexOfOperator +
-				1
+							
+		if (str.substring(indexOfOperator + 1 + hasRightSideNegative, str.length).search(allOperatorsRegex) > -1) {
+				righBoundIndex = str.substring(indexOfOperator + 1, str.length).search(allOperatorsRegex) + indexOfOperator + 1
 		}
 
 		if (leftBoundIndex > 0) {
@@ -37,15 +31,15 @@ function reduceExpression(str, regex) {
 		outOfBoundsRight = str.substring(righBoundIndex, str.length)
 
 		let toSolve = str.substring(leftBoundIndex, righBoundIndex)
-
+		
 		let solved = solveExpression(toSolve)
 
 		simplifiedExpression = `${outOfBoundsLeft}${solved}${outOfBoundsRight}`
 	} else {
 		simplifiedExpression = solveExpression(str)
 	}
-
-	return simplifiedExpression
+	
+		return simplifiedExpression
 }
 
 export default reduceExpression
