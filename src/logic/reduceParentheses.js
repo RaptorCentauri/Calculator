@@ -8,7 +8,10 @@ function reduceParentheses(str) {
 		lastOpenParentheses + 1,
 		nearestCloseParentheses,
 	)
+	
 
+	let leftOfParenthesesIsNumber = !isNaN(str[lastOpenParentheses-1])
+	
 	let determinedOperator = determineOperator(expressionToEvaluate)
 
 	let simplifiedExpression = reduceExpression(
@@ -17,14 +20,15 @@ function reduceParentheses(str) {
 	)
 
 	let start = `${str.substring(0, lastOpenParentheses)}`
-	let middle = `${simplifiedExpression}`
+	let middle = `${leftOfParenthesesIsNumber ? '*' : ''}${simplifiedExpression}`
 	let end =
 		lastOpenParentheses > 0
-			? `${str.substring(nearestCloseParentheses, str.length)}`
+			? `${str.substring(nearestCloseParentheses, str.length-1)}`
 			: `${str.substring(nearestCloseParentheses + 1, str.length + 1)}`
-
+			
+			
 	let reducedExpression = `${start}${middle}${end}`
-
+	
 	return reducedExpression
 }
 
