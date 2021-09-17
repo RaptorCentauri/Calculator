@@ -111,7 +111,7 @@ const App = () => {
   }
       
      
-  const Button = ({value, display}) => <div className='button-style' button-value={value} onClick={() => handleClick({value, display})}> {display}</div>
+  const Button = ({value, display}) => <div className='button-style' button-value={value} onClick={() => handleClick({value, display})}>{display}</div>
     
 
   
