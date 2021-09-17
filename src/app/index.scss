@@ -2,7 +2,6 @@
 
 $button-color: #757575;
 
-
 * {
   margin: 0;
   padding: 0;
@@ -20,18 +19,17 @@ $button-color: #757575;
   
   display: grid;
   grid-template-rows: 0.35fr 1fr;
-  grid-gap:2.5%
+  grid-gap:2.5%;
+  
+
+  @include breakpoint(desktop-large){
+    width: 50vw;
+  }
+  
 
 }
 
-
-
-
-
-
-
 .equation-box{
-  // box-sizing: border-box;
   border-bottom: 2.5px solid white;
   padding: 2.5%;
   display: flex;
@@ -39,14 +37,13 @@ $button-color: #757575;
   align-items: flex-end;
   }
   
-  .equation-content{
-    color: white;
-    width: inherit;
-    font-size: 2.5em;
-    text-align: right;
-    word-wrap: break-word;
-    }
-
+.equation-content{
+  color: white;
+  width: inherit;
+  font-size: 2.5em;
+  text-align: right;
+  word-wrap: break-word;
+  }
 
 
 .button-style{
@@ -56,13 +53,15 @@ $button-color: #757575;
   align-items: center;
   color: white;
   background-color: $button-color;
+  // padding: 100%;
+  margin: 5px;
   font-size: 2.5em;
   border-radius: 20%;
+  
   
   &:active{
     background-color: darken($button-color, 15%);
   }
-  
   
 }
 
@@ -70,9 +69,11 @@ $button-color: #757575;
 .button-layout{
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(4, 22.5vw);
-  grid-auto-rows: 22.5vw;
-  place-content: space-evenly;
+  grid-template-columns: repeat(4, 1fr);
+  
+  // place-content: space-evenly;
+  // background-color: pink;
+  
 }
 
 
