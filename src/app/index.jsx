@@ -1,9 +1,7 @@
-
 import * as React from 'react';
 import {render} from 'react-dom';
 import './index.scss'
 import calculator from '../logic/calculator'
-{/* import NumberBtn from './components/NumberBtn' */}
 
 const buttons = [
   {
@@ -113,7 +111,7 @@ const App = () => {
   }
       
      
-  const Button = ({value, display}) => <h6 className='button-style' button-value={value} onClick={() => handleClick({value, display})}> {display}</h6>
+  const Button = ({value, display}) => <div className='button-style' button-value={value} onClick={() => handleClick({value, display})}> {display}</div>
     
 
   
