@@ -3,6 +3,7 @@ import reduceParentheses from './reduceParentheses.js'
 import determineOperator from './determineOperator.js'
 
 function calculator(str) {
+	//make better
 	let onlyNumbers = /^-?[0-9]\d*(\.\d+)?$/.test(str)
 
 	let hasParentheses = /[()]/g.test(str)
